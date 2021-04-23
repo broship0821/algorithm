@@ -7,7 +7,7 @@ public class B1_20113 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
-
+        //투표 받은 횟수 만들기
         int[] vote = new int[num];
         for (int i=0;i<num;i++){
             int tmp = sc.nextInt();
@@ -30,12 +30,11 @@ public class B1_20113 {
                 cnt++;
                 idx = i;
             }
-
         }
-
+        //최대값이 하나라면 해당 사람 퇴출
         if(cnt==1)
             System.out.println(idx+1);
-        else
+        else//최대값이 여럿일 경우 스킵
             System.out.println("skipped");
     }
 }
