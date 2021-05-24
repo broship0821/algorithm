@@ -14,7 +14,7 @@ public class S4_2581 {
         for (int i = 2; i <= Math.sqrt(m); i++) {
             if (arr[i])
                 continue;
-            for (int j = i*i; j < m+1; j+=i) {
+            for (int j = i*i; j < m+1; j+=i) {//i를 제외한 i의 배수많큼 제외
                 arr[j] = true;
             }
         }

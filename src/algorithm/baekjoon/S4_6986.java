@@ -16,13 +16,13 @@ public class S4_6986 {
         Arrays.sort(arr);
         //절사평균 구하기
         double sum = 0.0;
-        for (int i = k; i < n-k; i++) {//앞뒤로 n개만큼 빼고 합 구하기
+        for (int i = k; i < n-k; i++) {//앞뒤로 k개만큼 빼고 합 구하기
             sum += arr[i];
         }
         //평균 구하기
-        System.out.println(String.format("%.2f", sum/(n-k*2)+ 1e-8));
+        System.out.println(String.format("%.2f", sum/(n-(k*2))+ 1e-8));
         //보정평균 구하기
-        for (int i = 0; i < k; i++) {//n만큼 좌우로 가까운수 추가
+        for (int i = 0; i < k; i++) {//k만큼 좌우로 가까운수 추가
             sum += arr[k];
             sum += arr[n-k-1];
         }
