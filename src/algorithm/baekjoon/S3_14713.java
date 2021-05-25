@@ -2,7 +2,7 @@ package algorithm.baekjoon;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
+// 실패
 public class S3_14713 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
