@@ -1,22 +1,23 @@
 package algorithm.baekjoon;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
-import java.util.Scanner;
-//시간초과
 public class B10866 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         LinkedList<Integer> list = new LinkedList<>();
-        int n = sc.nextInt();
+        int n = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < n; i++) {
-            String command = sc.next();
-            switch (command){
+            String[] command = br.readLine().split(" ");
+            switch (command[0]){
                 case "push_front":
-                    list.add(0, sc.nextInt());
+                    list.add(0, Integer.parseInt(command[1]));
                     break;
                 case  "push_back":
-                    list.add(sc.nextInt());
+                    list.add(Integer.parseInt(command[1]));
                     break;
                 case "pop_front":
                     if (!list.isEmpty())
