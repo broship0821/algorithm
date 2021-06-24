@@ -1,16 +1,15 @@
 package algorithm.baekjoon;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class B10820 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        //어떻게 반복 횟수를 정할지?
-        for (int i = 0; i < 102; i++) {
-            String str = sc.nextLine();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = "";
 
-            if ("".equals(str)) return;
-
+        while ((str = br.readLine()) != null) {
             int low = 0;
             int up = 0;
             int num = 0;
