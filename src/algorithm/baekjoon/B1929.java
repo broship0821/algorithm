@@ -1,7 +1,7 @@
 package algorithm.baekjoon;
 
 import java.util.Scanner;
-
+//소수구하기
 public class B1929 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class B1929 {
         }
 
         for (int i = m; i <= n; i++) {
-            if (!sosu[i])
+            if (!sosu[i])//false면 소수
                 System.out.println(i);
         }
     }
