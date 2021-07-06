@@ -11,7 +11,7 @@ public class B2089 {
         if (n==0)
             System.out.println(0);
         else {
-            while (n!=1){
+            while (n!=0){
                 //기존 2진수 구하는 방법
 //                sb.append(n%2);
 //                n /= 2;
@@ -19,7 +19,6 @@ public class B2089 {
                 sb.append(Math.abs(n%-2));
                 n = (int)Math.ceil((double)n/(-2));
             }
-            sb.append(n);
         }
         System.out.println(sb.reverse());
     }
