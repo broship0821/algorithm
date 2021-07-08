@@ -2,7 +2,7 @@ package algorithm.baekjoon;
 
 import java.util.Scanner;
 import java.util.Stack;
-
+//10진수를 b진수 n으로 바꾸기
 public class B11005 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
