@@ -13,7 +13,7 @@ public class Ex01피보나치수열_top_down {
         //계산 했던건 그대로 출력
         if (arr[x]!=0)
             return arr[x];
-        //처음 계산하는건 계산 후 배열에 담앋두기
+        //처음 계산하는건 계산 후 배열에 담아두기
         arr[x] = fibo(x-1) + fibo(x-2);
         return arr[x];
     }
