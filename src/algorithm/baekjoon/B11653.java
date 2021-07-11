@@ -1,7 +1,7 @@
 package algorithm.baekjoon;
 
 import java.util.Scanner;
-
+//소인수분해
 public class B11653 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
