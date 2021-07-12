@@ -1,7 +1,7 @@
 package algorithm.이코테.dynamicPrograming;
 
 import java.util.Scanner;
-
+//피보나치 수열 : 1,1,2,3,5,8,13... a(n) = a(n-1) + a(n-2)
 public class Ex01피보나치수열_top_down {
     //100까지 담을 수 있는 배열
     static long[] arr = new long[101];
