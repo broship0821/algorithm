@@ -1,7 +1,7 @@
 package algorithm.baekjoon;
 
 import java.util.Scanner;
-//다이나믹 프로그래밍 공부하고 풀기
+//다이나믹 프로그래밍 공부하고 풀기 -> 다이나믹 폴더에 있음
 public class B1463 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

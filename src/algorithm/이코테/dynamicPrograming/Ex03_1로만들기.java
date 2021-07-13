@@ -21,7 +21,6 @@ public class Ex03_1로만들기 {
             //현재 수에서 5로 나누어 떨어지는 경우
             if (i%5 == 0) dp[i] = Math.min(dp[i], dp[i/5]+1);
         }
-        //else if로 풀어도 될듯?
         System.out.println(dp[x]);
     }
 }

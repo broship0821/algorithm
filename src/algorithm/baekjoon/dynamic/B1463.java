@@ -20,7 +20,6 @@ public class B1463 {
             if (i%3 == 0) min = Math.min(min, dp[i/3]+1);
             dp[i] = min;
         }
-        //else if로 풀어도 될듯?
         System.out.println(dp[x]);
     }
 }
