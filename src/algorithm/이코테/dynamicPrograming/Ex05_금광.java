@@ -6,39 +6,36 @@ import java.util.Scanner;
 public class Ex05_금광 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        for (int i = 0; i < t; i++) {
-            int n = sc.nextInt();
-            int m = sc.nextInt();
-            //dp 테이블 초기화
-            int[][] dp = new int[n][m];
-            for (int j = 0; j < n; j++) {
-                for (int k = 0; k < m; k++) {
-                    dp[j][k] = sc.nextInt();
-                }
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        //금 위치 배열
+        int[][] arr = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = sc.nextInt();
             }
-            //다이나믹 프로그래밍
-            int leftUp = 0;
-            int leftDown = 0;
-            int left = 0;
-            for (int j = 1; j < n; j++) {
-                for (int k = 0; k < m; k++) {
-                    //왼쪽 위에서 오는 경우
-                    if (k==0) leftUp = 0;
-                    else leftUp = dp[k-1][j-1];
-                    //왼쪽 아래에서 오는 경우
-                    if (k==n-1) leftDown = 0;
-                    else leftDown = dp[k+1][j-1];
-                    //왼쪽에서 오는 경우
-                    left = dp[k][j-1];
-                    dp[k][j] = dp[k][j] + Math.max(leftUp, Math.max(leftDown, left));
-                }
-            }
-            int result = 0;
-            for (int j = 0; j < n; j++) {
-                result = Math.max(result, dp[j][m-1]);
-            }
-            System.out.println(result);
         }
+        //각 위치에 최고값을 기록할 dp 배열
+        int[][] dp = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            dp[i][0] = arr[i][0];//제일 좌측은 더할 값이 없어서 이미 최고값
+        }
+        //dp[i][j] = arr[i][j] + max(dp[i-1][j-1], dp[i][j-1], dp[i+1][j-1])
+        for (int j = 1; j < m; j++) {//행보다 열을 먼저 집어넣어야 하기 때문에 m먼저
+            for (int i = 0; i < n; i++) {
+                if (i==0)//맨 위일때 더이상 위로 올라갈 수 없음
+                    dp[i][j] = arr[i][j] + Math.max(dp[i][j-1], dp[i+1][j-1]);
+                else if (i==n-1)//맨 아래일때 더이상 아래로 내려갈 수 없음
+                    dp[i][j] = arr[i][j] + Math.max(dp[i-1][j-1], dp[i][j-1]);
+                else//중간일때는 상중하 어디서든 올수있음
+                    dp[i][j] = arr[i][j] + Math.max(Math.max(dp[i-1][j-1], dp[i][j-1]), dp[i+1][j-1]);
+            }
+        }
+        //맨 마지막 열 중 가장 큰 값이 정답
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            result = Math.max(result, dp[i][m-1]);
+        }
+        System.out.println(result);
     }
 }
