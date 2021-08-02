@@ -10,18 +10,33 @@ public class B14002 {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-
+        // dp 배열 구하기
         int[] dp = new int[n];
-
         for (int i = 0; i < n; i++) {
             dp[i] = 1;
             for (int j = 0; j < i; j++) {
-                if (arr[i] > arr[j] && dp[j] + 1 > dp[i]) {
-                    dp[i] = dp[j] + 1;
-
+                if (arr[i] > arr[j]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
         }
-        //이제 역추적만 하면 되는데 방법을 모르겠다다
+        // 가장 긴 수열 길이 구하기(max)
+        int max = 0;
+        for (int i : dp){
+            max = Math.max(max, i);
+        }
+        System.out.println(max);
+        //배열 역추적
+        Stack<Integer> stack = new Stack<>();
+        for (int i = n-1; i >= 0; i--) {
+            if (max==dp[i]){
+                stack.push(arr[i]);
+                max--;
+            }
+        }
+
+        while (!stack.isEmpty()){
+            System.out.print(stack.pop() + " ");
+        }
     }
 }
