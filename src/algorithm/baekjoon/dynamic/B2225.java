@@ -9,7 +9,7 @@ public class B2225 {
         int k = sc.nextInt();
         long[][] dp = new long[201][201];
 
-        for (int i = 0; i <= 200; i++) {
+        for (int i = 1; i <= 200; i++) {
             dp[i][0] = 1; //i개를 가지고 0을 만들때 0, 0+0, 0+0+0... 무조건 1개
             dp[1][i] = 1; //1개를 가지고 i를 만들때 0, 1, 2, 3, 4... 무조건 1개
         }
